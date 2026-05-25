@@ -178,8 +178,13 @@ public class HotSpringController {
 			@PathVariable Long hotSpringId) {
 		log.info("Retrieving hot spring with ID = {} for skinny dipper with ID = {}", 
 				hotSpringId, skinnyDipperId);
-		
+			
 		return hotSpringService.retrieveHotSpringById(skinnyDipperId, hotSpringId);
-		
+			}
+	@GetMapping("/skinny_dipper/{skinnyDipperId}/hot_spring")
+	public List<HotSpringData> retrieveAllHotSprings(@PathVariable Long skinnyDipperId) {
+		log.info("Retrieving all hot springs for skinny dipper with ID = {}", skinnyDipperId);
+		return hotSpringService.retrieveAllHotSprings(skinnyDipperId);
 	}
-}
+
+	}

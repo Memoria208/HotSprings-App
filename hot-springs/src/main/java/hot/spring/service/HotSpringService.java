@@ -212,5 +212,18 @@ public class HotSpringService {
 		
 		return new HotSpringData(hotSpring);
 	}
+	
+	@Transactional(readOnly = true)
+	public List<HotSpringData> retrieveAllHotSprings(Long skinnyDipperId) {
+		SkinnyDipper skinnyDipper = findSkinnyDipperById(skinnyDipperId);
+		List<HotSpringData> response = new LinkedList<>();
 
+		for(HotSpring hotSpring : skinnyDipper.getHotSprings()) {
+			response.add(new HotSpringData(hotSpring));
+		}
+
+		return response;
+	}
 }
+
+
