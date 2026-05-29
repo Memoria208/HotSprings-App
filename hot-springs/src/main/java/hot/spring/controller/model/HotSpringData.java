@@ -6,7 +6,7 @@ import java.util.Set;
 
 import hot.spring.entity.Detail;
 import hot.spring.entity.HotSpring;
-import hot.spring.entity.SkinnyDipper;
+import hot.spring.entity.Soaker;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 Add @ Data lombok annotation to create Getters/Setters.
 Add @ NoArgsConstructor.
 Delete pasted annotations
-Change skinnyDipper to: HotSpringSkinnyDipper
+Change Soaker to: HotSpringSoaker
 Change Set<Detail> details to Set<String> details
 */
 
@@ -29,8 +29,8 @@ public class HotSpringData {
 	 private String county;
 	 private String directions;
 	 
-	 //change SkinnyDipper to HotSpringSkinnyDipper
-	 private HotSpringSkinnyDipper skinnyDipper;
+	 //change Soaker to HotSpringSoaker
+	 private HotSpringSoaker soaker;
 	 
 	 //change Set<Detail> to Set<String>
 	 private Set<String> details = new HashSet<>();
@@ -43,8 +43,8 @@ public class HotSpringData {
 		 county = hotSpring.getCounty();
 		 directions = hotSpring.getDirections();
 		 
-		 //need a new hot spring skinny dipper, not a new skinny dipper entity
-		 skinnyDipper = new HotSpringSkinnyDipper(hotSpring.getSkinnyDipper());
+		 //need a new hot spring soaker, not a new soaker entity
+		 soaker = new HotSpringSoaker(hotSpring.getSoaker());
 		 
 		 //set details
 		 for(Detail detail : hotSpring.getDetails()) {
@@ -52,24 +52,24 @@ public class HotSpringData {
 		 }
 	 }
 	 
-	 /*Create HotSpringSkinnyDipper object, like we did for skinnyDipperData
-	  * copy/paste - Id, Name, and Email from skinnydipper class.
-	  * Delete all the pasted annotations from skinnydipper class. DTO?*/
+	 /*Create HotSpringSoaker object, like we did for SoakerData
+	  * copy/paste - Id, Name, and Email from Soaker class.
+	  * Delete all the pasted annotations from Soaker class. DTO?*/
 	 
 	 @Data
 	 @NoArgsConstructor
-	 public static class HotSpringSkinnyDipper {
-		 private Long skinnyDipperId;
-		 private String skinnyDipperName;
-		 private String skinnyDipperEmail;
+	 public static class HotSpringSoaker {
+		 private Long soakerId;
+		 private String soakerName;
+		 private String soakerEmail;
 		 
-		 //constructor for hot spring skinny dipper that takes a skinny dipper
-		 public HotSpringSkinnyDipper(SkinnyDipper skinnyDipper) {
+		 //constructor for hot spring soaker that takes a soaker
+		 public HotSpringSoaker(Soaker soaker) {
 			 
-			 //set fields for skinny dipper
-			 skinnyDipperId = skinnyDipper.getSkinnyDipperId();
-			 skinnyDipperName = skinnyDipper.getSkinnyDipperName();
-			 skinnyDipperEmail = skinnyDipper.getSkinnyDipperEmail();
+			 //set fields for soaker
+			 soakerId = soaker.getSoakerId();
+			 soakerName = soaker.getSoakerName();
+			 soakerEmail = soaker.getSoakerEmail();
 		 }
 	 }
 }

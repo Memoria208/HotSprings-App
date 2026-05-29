@@ -1,0 +1,41 @@
+# MAVEN
+# target/ — this is the folder Maven creates when it compiles your code. It contains compiled .class files and other build artifacts. There's no reason to track these in Git because Maven regenerates them every time you run mvn compile. This was causing us problems earlier when Git was tracking compiled files and creating conflicts.
+target/
+
+# *.class — catches any stray compiled Java files that might end up outside the target folder.
+*.class
+
+
+
+
+
+# IDE FILES
+# #These are personal IDE settings that are specific to your computer. If someone else clones your repo they don't want your IDE settings overwriting theirs.
+
+# .idea/ — IntelliJ IDEA's project settings folder
+.idea/
+
+# *.iml — IntelliJ module files
+*.iml
+
+# .vscode/ — VS Code settings folder
+.vscode/
+
+
+
+
+
+# OS FILES
+# .DS_Store — a hidden file Mac creates in every folder to store view preferences. Annoying and useless to commit.
+.DS_Store
+
+# Thumbs.db — same thing but Windows creates it for folder thumbnail previews.
+Thumbs.db
+
+
+
+
+
+# LOGS
+# *.log — log files generated when the app runs. These change constantly and don't belong in version control.
+*.log

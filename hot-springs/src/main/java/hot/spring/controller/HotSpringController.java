@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import hot.spring.controller.model.HotSpringData;
-import hot.spring.controller.model.SkinnyDipperData;
+import hot.spring.controller.model.SoakerData;
 import hot.spring.service.HotSpringService;
 import lombok.extern.slf4j.Slf4j;
 
@@ -41,108 +41,108 @@ public class HotSpringController {
 	private HotSpringService hotSpringService;
 
 	/*tell Spring to map POST. This method is going to get a POST request to 
-	 * "/hot_spring/skinny_dipper" */
+	 * "/hot_spring/soaker" */
 	
-	@PostMapping("/skinny_dipper")
+	@PostMapping("/soaker")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public SkinnyDipperData insertSkinnyDipper(
-			@RequestBody SkinnyDipperData skinnyDipperData) {
+	public SoakerData insertSoaker(
+			@RequestBody SoakerData soakerData) {
 		
 		/*{} is how you specify a replaceable parameter*/
 		
-		log.info("Creating skinny dipper {}", skinnyDipperData);
-		return hotSpringService.saveSkinnyDipper(skinnyDipperData);
+		log.info("Creating soaker {}", soakerData);
+		return hotSpringService.saveSoaker(soakerData);
 	}
 	
 	/*Add update method right after the insert method because they’re very similar.*/
-	/*Takes a //(@PathVariable Long skinnyDipperId,*/
-	/*And a payload/body // @RequestBody SkinnyDipperData skinnyDipperData)*/
+	/*Takes a //(@PathVariable Long soakerId,*/
+	/*And a payload/body // @RequestBody SoakerData soakerData)*/
 	/*Add @PutMapping (“/inside will be the resource/{and the resource ID}”)*/
-	/*Set skinnyDipperId inside the skinnyDipperData object just to make sure it is always 
+	/*Set SoakerId inside the SoakerData object just to make sure it is always 
 	 * set.*/
 	/*Log it. */
 	/*Call the same save method on the service that we called when we were inserting a 
-	 * skinnyDipper.*/
+	 * Soaker.*/
 	
 	/*"/table_name/{javaFieldName}*/
-	@PutMapping("/skinny_dipper/{skinnyDipperId}")
-	public SkinnyDipperData updateSkinnyDipper(@PathVariable Long skinnyDipperId, 		
-			@RequestBody SkinnyDipperData skinnyDipperData) {
-		skinnyDipperData.setSkinnyDipperId(skinnyDipperId);
-		log.info("Updating skinny dipper {}", skinnyDipperData);
-		return hotSpringService.saveSkinnyDipper(skinnyDipperData);
+	@PutMapping("/soaker/{soakerId}")
+	public SoakerData updateSoaker(@PathVariable Long soakerId, 		
+			@RequestBody SoakerData soakerData) {
+		soakerData.setSoakerId(soakerId);
+		log.info("Updating soaker {}", soakerData);
+		return hotSpringService.saveSoaker(soakerData);
 	}
 	
-	/*write skinnyDipper method. public, returns List of SkinnyDipperData called 
-	 * retrieveAllSkinnyDippers, takes no parameters*/
+	/*write Soaker method. public, returns List of SoakerData called 
+	 * retrieveAllSoakers, takes no parameters*/
 	/*add @GetMapping because this is a GET request*/
 	/*Log method call*/
-	/*call the hot spring service and return the results of the retrieveAllSkinnyDipper 
+	/*call the hot spring service and return the results of the retrieveAllSoaker 
 	 * method*/
 	
-	@GetMapping("/skinny_dipper")
-	public List<SkinnyDipperData> retrieveAllSkinnyDippers(){
-		log.info("Retrieve all skinny dippers called.");
-		return hotSpringService.retrieveAllSkinnyDippers();
+	@GetMapping("/soaker")
+	public List<SoakerData> retrieveAllSoakers(){
+		log.info("Retrieve all soakers called.");
+		return hotSpringService.retrieveAllSoakers();
 	}
 	
-	/*"/skinny_dipper/" is a resource, pass in the variable name "{skinnyDipperId}"*/
+	/*"/soaker/" is a resource, pass in the variable name "{SoakerId}"*/
 	
-	@GetMapping("/skinny_dipper/{skinnyDipperId}")
+	@GetMapping("/soaker/{soakerId}")
 	
 	/*tell Spring we're expecting the variable in the URL and then it will go into the 
-	 * skinny dipper Id parameter - use "@PathVariable"*/
+	 * soaker Id parameter - use "@PathVariable"*/
 	/*log call*/
 	
-	public SkinnyDipperData retrieveSkinnyDipperById(@PathVariable Long skinnyDipperId) {
-		log.info("Retrieving skinny dipper with ID ={}" + skinnyDipperId);
-		return hotSpringService.retrieveSkinnyDipperById(skinnyDipperId);
+	public SoakerData retrieveSoakerById(@PathVariable Long soakerId) {
+		log.info("Retrieving soaker with ID ={}" + soakerId);
+		return hotSpringService.retrieveSoakerById(soakerId);
 	}
 	
-	/*deleteAll method to assure that delete all skinny dippers CANNOT happen.*/
+	/*deleteAll method to assure that delete all soakers CANNOT happen.*/
 	/*Write first delete method: delete all.*/
-	/*@DeleteMapping("/skinny_dipper")*/
+	/*@DeleteMapping("/soaker")*/
 	/*log*/
 	/*Throw unsupported operation exception, unchecked so no need to declare it.*/
 	
-	@DeleteMapping("/skinny_dipper")
-	public void deleteAllSkinnyDippers() {
-		log.info("Attempting to delete all skinny dippers.");
+	@DeleteMapping("/soaker")
+	public void deleteAllSoakers() {
+		log.info("Attempting to delete all soakers.");
 		throw new UnsupportedOperationException(
-			"Deleting all skinny dippers is not allowed.");
+			"Deleting all soakers is not allowed.");
 	}
 	
-	/*Write delete skinny dipper by ID method:
+	/*Write delete soaker by ID method:
 	 *  Return a message, and let Jackson convert this to JSON.
 	 *  log it.
 	 *  Delete it in the service.*/
 	
-	@DeleteMapping("/skinny_dipper/{skinnyDipperId}")
-	public Map<String, String> deleteSkinnyDipperById(@PathVariable Long skinnyDipperId){
-		log.info("Deleting skinny dipper with ID ={}" + skinnyDipperId);
+	@DeleteMapping("/soaker/{soakerId}")
+	public Map<String, String> deleteSoakerById(@PathVariable Long soakerId){
+		log.info("Deleting soaker with ID ={}" + soakerId);
 		
-		hotSpringService.deleteSkinnyDipperById(skinnyDipperId);
+		hotSpringService.deleteSoakerById(soakerId);
 		
 		return Map.of("message", 
-			"Deletion of skinny dipper with ID =" + skinnyDipperId + " was successful");
+			"Deletion of soaker with ID =" + soakerId + " was successful");
 	}
 	
-	/*method to insert hot spring associated with the skinny dipper who is adding it.
+	/*method to insert hot spring associated with the soaker who is adding it.
 	 * Takes 1 resource id plus the JSON payload.
 	 * log it.
 	 * create HotSpringData method.
 	 * return HotSpringData object.*/
 	
-	@PostMapping("/skinny_dipper/{skinnyDipperId}/hot_spring")
+	@PostMapping("/soaker/{soakerId}/hot_spring")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public HotSpringData insertHotSpring(@PathVariable Long skinnyDipperId, 
+	public HotSpringData insertHotSpring(@PathVariable Long soakerId, 
 		@RequestBody HotSpringData hotSpringData) {
 		
-		log.info("Creating hot spring {} for skinny dipper with ID = {}", 
-				hotSpringData, skinnyDipperId);
+		log.info("Creating hot spring {} for soaker with ID = {}", 
+				hotSpringData, soakerId);
 		
 		//return hot spring data object
-		return hotSpringService.savetHotSpring(skinnyDipperId, hotSpringData);
+		return hotSpringService.saveHotSpring(soakerId, hotSpringData);
 	}
 	
 	/* method to modify a hot spring*/
@@ -155,36 +155,50 @@ public class HotSpringController {
 	Add hotSpringId into the hotSpringData by saying hotSpringData.setHotSpringId
 	(hotSpringId);*/
 	
-	@PutMapping("/skinny_dipper/{skinnyDipperId}/hot_spring/{hotSpringId}")
-	public HotSpringData updateHotSpring(@PathVariable Long skinnyDipperId,
+	@PutMapping("/soaker/{soakerId}/hot_spring/{hotSpringId}")
+	public HotSpringData updateHotSpring(@PathVariable Long soakerId,
 		@PathVariable Long hotSpringId,	
 		@RequestBody HotSpringData hotSpringData) {
 		
 		hotSpringData.setHotSpringId(hotSpringId);
 		
-		log.info("Updating hot spring {} for skinny dipper with ID = {}", 
-				hotSpringData, skinnyDipperId);
+		log.info("Updating hot spring {} for soaker with ID = {}", 
+				hotSpringData, soakerId);
 		
 		//return hot spring data object
-		return hotSpringService.savetHotSpring(skinnyDipperId, hotSpringData);
+		return hotSpringService.saveHotSpring(soakerId, hotSpringData);
 	}
 
 	/*create retrieveHotSpringById method.
 	 * log it.
 	 * call service method hotSpringService.retrieveHotSpringById*/	
 	
-	@GetMapping("/skinny_dipper/{skinnyDipperId}/hot_spring/{hotSpringId}")
-	public HotSpringData retrieveHotSpringById(@PathVariable Long skinnyDipperId,
+	@GetMapping("/soaker/{soakerId}/hot_spring/{hotSpringId}")
+	public HotSpringData retrieveHotSpringById(@PathVariable Long soakerId,
 			@PathVariable Long hotSpringId) {
-		log.info("Retrieving hot spring with ID = {} for skinny dipper with ID = {}", 
-				hotSpringId, skinnyDipperId);
+		log.info("Retrieving hot spring with ID = {} for soaker with ID = {}", 
+				hotSpringId, soakerId);
 			
-		return hotSpringService.retrieveHotSpringById(skinnyDipperId, hotSpringId);
+		return hotSpringService.retrieveHotSpringById(soakerId, hotSpringId);
 			}
-	@GetMapping("/skinny_dipper/{skinnyDipperId}/hot_spring")
-	public List<HotSpringData> retrieveAllHotSprings(@PathVariable Long skinnyDipperId) {
-		log.info("Retrieving all hot springs for skinny dipper with ID = {}", skinnyDipperId);
-		return hotSpringService.retrieveAllHotSprings(skinnyDipperId);
+	@GetMapping("/soaker/{soakerId}/hot_spring")
+	public List<HotSpringData> retrieveAllHotSprings(@PathVariable Long soakerId) {
+		log.info("Retrieving all hot springs for soaker with ID = {}", soakerId);
+		return hotSpringService.retrieveAllHotSprings(soakerId);
 	}
+	@DeleteMapping("/soaker/{soakerId}/hot_spring/{hotSpringId}")
+	public Map<String, String> deleteHotSpringById(
+		@PathVariable Long soakerId,
+		@PathVariable Long hotSpringId) {
+			log.info("Deleting hot spring with ID = {} for soaker with ID = {}",
+				hotSpringId, soakerId);
+			
+			hotSpringService.deleteHotSpringById(soakerId, hotSpringId);
+
+			return Map.of("message",
+				"Deletion of hot spring with ID = " + hotSpringId + " was successful");
+			
+		}
+	
 
 	}

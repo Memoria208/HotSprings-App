@@ -36,9 +36,9 @@ public class HotSpring {
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
     @ManyToOne(cascade = CascadeType.ALL)
-    //joined by the table column "skinny_dipper_id"
-    @JoinColumn(name = "skinny_dipper_id", nullable = false)
-    private SkinnyDipper skinnyDipper;
+    //joined by the table column "soaker_id"
+    @JoinColumn(name = "soaker_id", nullable = false)
+    private Soaker soaker;
     
     @EqualsAndHashCode.Exclude
     @ToString.Exclude

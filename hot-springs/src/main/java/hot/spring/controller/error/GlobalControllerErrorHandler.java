@@ -85,7 +85,7 @@ public class GlobalControllerErrorHandler {
 		return buildExceptionMessage(ex, HttpStatus.NOT_FOUND, webRequest, 			LogStatus.MESSAGE_ONLY);
 	}
 	
-	/*handles duplicate emails so that not two skinny dippers can have the same email.*/
+	/*handles duplicate emails so that not two soakers can have the same email.*/
 	
 	@ExceptionHandler(DuplicateKeyException.class)
 	@ResponseStatus(code = HttpStatus.CONFLICT)

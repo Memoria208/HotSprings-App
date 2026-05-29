@@ -1,12 +1,12 @@
 C:\Users\tamsl\Wk-18-Final-Project\hot-springs\src\main\java\hot\spring\controller\error\GlobalControllerErrorHandler.java
 C:\Users\tamsl\Wk-18-Final-Project\hot-springs\src\main\java\hot\spring\controller\HotSpringController.java
 C:\Users\tamsl\Wk-18-Final-Project\hot-springs\src\main\java\hot\spring\controller\model\HotSpringData.java
-C:\Users\tamsl\Wk-18-Final-Project\hot-springs\src\main\java\hot\spring\controller\model\SkinnyDipperData.java
+C:\Users\tamsl\Wk-18-Final-Project\hot-springs\src\main\java\hot\spring\controller\model\SoakerData.java
 C:\Users\tamsl\Wk-18-Final-Project\hot-springs\src\main\java\hot\spring\dao\DetailDao.java
 C:\Users\tamsl\Wk-18-Final-Project\hot-springs\src\main\java\hot\spring\dao\HotSpringDao.java
-C:\Users\tamsl\Wk-18-Final-Project\hot-springs\src\main\java\hot\spring\dao\SkinnyDipperDao.java
+C:\Users\tamsl\Wk-18-Final-Project\hot-springs\src\main\java\hot\spring\dao\SoakerDao.java
 C:\Users\tamsl\Wk-18-Final-Project\hot-springs\src\main\java\hot\spring\entity\Detail.java
 C:\Users\tamsl\Wk-18-Final-Project\hot-springs\src\main\java\hot\spring\entity\HotSpring.java
-C:\Users\tamsl\Wk-18-Final-Project\hot-springs\src\main\java\hot\spring\entity\SkinnyDipper.java
+C:\Users\tamsl\Wk-18-Final-Project\hot-springs\src\main\java\hot\spring\entity\Soaker.java
 C:\Users\tamsl\Wk-18-Final-Project\hot-springs\src\main\java\hot\spring\HotSpringApplication.java
 C:\Users\tamsl\Wk-18-Final-Project\hot-springs\src\main\java\hot\spring\service\HotSpringService.java
