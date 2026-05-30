@@ -235,6 +235,24 @@ public class HotSpringService {
 
 		return response;
 	}
+
+	/*retrieve all detail tags from the database 
+	 * converts Detail entity objects into plain strings
+	so they can be sent to the front end as a simple list*/
+	@Transactional(readOnly = true)
+	public List<String> retrieveAllDetails() {
+		List<Detail> details = detailDao.findAll();
+		List<String> response = new LinkedList<>();
+
+		/*loop through each detail entity and extract
+		 * just the string value to add to the response list */
+		for(Detail detail : details) {
+			response.add(detail.getDetail());
+		}
+
+		return response;
+	}
+
 }
 
 

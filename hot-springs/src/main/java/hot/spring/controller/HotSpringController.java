@@ -201,6 +201,13 @@ public class HotSpringController {
 				"Deletion of hot spring with ID = " + hotSpringId + " was successful");
 			
 		}
-	
+	/*retreive all available detail tags
+	 * returns a list of strings so the front end
+	 * can display them as checkbox options */
+	@GetMapping("/detail")
+	public List<String> retrieveAllDetails() {
+		log.info("Retrieving all details.");
+		return hotSpringService.retrieveAllDetails();
+	}
 
 	}
