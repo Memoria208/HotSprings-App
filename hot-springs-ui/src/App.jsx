@@ -43,6 +43,14 @@ function App() {
     setSoakers(data)
   }
 
+  // fetchHotSprings - calls our API and gets all hot springs for a specific soaker
+  // soakerId - the ID of the soaker whose hot springs I want
+  const fetchHotSprings = async (soakerId) => {
+    const response = await fetch(`${API_URL}/soaker/${soakerId}/hot_spring`)
+    const data = await response.json()
+    setSelectedSoaker(prev => ({ ...prev, hotSprings: data}))
+  }
+
   //RENDER
   // This is the JSX that gets displayed in the browser
   return (
@@ -54,11 +62,35 @@ function App() {
       <h2>Soakers</h2>
       <ul>
         {soakers.map(soaker => (
-          <li key={soaker.soakerId}>
+          <li 
+            key={soaker.soakerId}
+            onClick={() => {
+              // when clicked, set this soaker as selected and fetch their hot springs
+              setSelectedSoaker(soaker)
+              fetchHotSprings(soaker.soakerId)
+            }}
+            style={{ cursor: 'pointer'}}
+          >
             {soaker.soakerName} - {soaker.soakerEmail}
           </li>
         ))}
       </ul>
+      {/* Show selected soaker's hot springs when a soaker is clicked */}
+      {selectedSoaker && (
+        <div>
+          <h2>{selectedSoaker.soakerName}'s Hot Springs</h2>
+          <ul>
+            {selectedSoaker.hotSprings && selectedSoaker.hotSprings.map(hotSpring => (
+              <li key={hotSpring.hotSpringId}>
+                <strong>{hotSpring.hotSpringName}</strong>
+                <p>County: {hotSpring.county}</p>
+                <p>Directions: {hotSpring.directions}</p>
+                <p>Details: {hotSpring.details.join(', ')}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   )
 }
