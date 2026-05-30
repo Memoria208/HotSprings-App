@@ -3,6 +3,7 @@ package hot.spring.controller;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -28,6 +29,7 @@ import lombok.extern.slf4j.Slf4j;
  * 
  * add logger */
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/hot_spring")
 @Slf4j
