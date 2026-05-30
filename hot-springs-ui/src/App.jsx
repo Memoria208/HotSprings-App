@@ -24,6 +24,12 @@ function App() {
   // starts as null because nothing is selected when the app first loads
   const [selectedSoaker, setSelectedSoaker] = useState(null)
 
+  //newSoakerName - holds the value typed into the name input field
+  const [newSoakerName, setNewSoakerName] = useState('')
+
+  //newSoakerEmail - holds the value typed into the email input field
+  const [newSoakerEmail, setNewSoakerEmail] = useState('')
+
   // CONSTANTS
   // The base URL of my Spring Boot API
   const API_URL = 'http://localhost:8080/hot_spring'
@@ -51,6 +57,31 @@ function App() {
     setSelectedSoaker(prev => ({ ...prev, hotSprings: data}))
   }
 
+  // handleAddSoaker - send a POST request to create a new soaker
+  // prevents the page from refreshing when the form is submitted
+  const handleAddSoaker = async (e) => {
+    e.preventDefault()
+
+    // send POST request to the API with the new soaker data
+    await fetch(`${API_URL}/soaker`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        soakerName: newSoakerName,
+        soakerEmail: newSoakerEmail
+      })
+    })
+
+    //clear the form fields after submitting
+    setNewSoakerName('')
+    setNewSoakerEmail('')
+
+    // refresh the soakers list so the new soaker appears
+    fetchSoakers()
+  }
+
   //RENDER
   // This is the JSX that gets displayed in the browser
   return (
@@ -58,6 +89,34 @@ function App() {
       <h1>HotSprings App</h1>
       <p>Community-driven hot spring condition reports for Idaho - the state with the most hotsprings in the country</p>
 
+      {/* Form to add a new soaker */}
+      <h2>Add a Soaker</h2>
+      <form onSubmit={handleAddSoaker}>
+        <div>
+          {/* name input - updates newSoakerName state as user types */}
+          <label>Name:</label>
+          <input
+            type="text"
+            value={newSoakerName}
+            onChange={(e) => setNewSoakerName(e.target.value)}
+            placeholder="Enter name"
+            required
+          />
+        </div>
+        <div>
+          {/* email input - updates newSoakerEmail state as user types */}
+          <label>Email:</label>
+          <input
+            type="email"
+            value={newSoakerEmail}
+            onChange={(e) => setNewSoakerEmail(e.target.value)}
+            placeholder="Enter email"
+            required
+          />
+        </div>
+        {/* submit button - triggers handleAddSoaker */}
+        <button type="submit">Add Soaker</button>
+      </form>
       {/* List of all soakers */}
       <h2>Soakers</h2>
       <ul>
