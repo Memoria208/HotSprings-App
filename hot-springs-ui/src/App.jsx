@@ -138,10 +138,20 @@ function App() {
   //RENDER
   // This is the JSX that gets displayed in the browser
   return (
-    <div className='app'>
-      <h1>HotSprings App</h1>
-      <p>Community-driven hot spring condition reports for Idaho - the state with the most hotsprings in the country</p>
+    
+    <div>
+      {/* Outer wrapper div - holds hero and content sections */}
+      
+      {/* Hero section - displays the background photo with
+          title and tagline overlaid on top */}
+      <div className='hero'>
+        <h1>HotSprings App</h1>
+        <p>Community-driven hot spring condition reports</p>
+      </div>
 
+      {/* Content section - holds all the forms and lists
+          below the hero photo */}  
+      <div className='content'>
       {/* Form to add a new soaker */}
       <h2>Add a Soaker</h2>
       <form onSubmit={handleAddSoaker}>
@@ -262,6 +272,9 @@ function App() {
           </ul>
         </div>
       )}
+      {/* closes the content div */}
+      </div>
+    {/* closes the outer wrapper div */}    
     </div>
   )
 }
