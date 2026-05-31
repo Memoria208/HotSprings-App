@@ -190,6 +190,8 @@ function App() {
       {/* Show selected soaker's hot springs when a soaker is clicked */}
       {selectedSoaker && (
         <div>
+          {/* back button - clears selectedSoaker so the user returns to the full list */}
+          <button onClick={() => setSelectedSoaker(null)}>Back to Soakers</button>
           <h2>{selectedSoaker.soakerName}'s Hot Springs</h2>
           
           {/* Form to add a new hot spring for the selected soaker */}
