@@ -1,127 +1,124 @@
-# HotSprings App
+# 🌡️ HotSprings
 
-A community-driven full-stack application for discovering and sharing
-real-time condition reports on hot springs locations in Idaho and beyond.
+> *"What's the temperature like?"* — every Idahoan, always
 
-## About
+A community-driven full-stack app for discovering and sharing real-time condition reports on hot springs across Idaho and beyond. Built for **Soakers** — the unsung heroes who show up with trash bags and thermometers so the rest of us can have a nice time.
 
-Hot springs have a vibrant culture built around community care and shared
-responsibility. Many pools are maintained by dedicated visitors who
-regularly clean and monitor conditions to keep them safe and enjoyable
-for everyone.
+![Java](https://img.shields.io/badge/Java_21-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot_3-6DB33F?style=flat-square&logo=springboot&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![MySQL](https://img.shields.io/badge/MySQL_8-4479A1?style=flat-square&logo=mysql&logoColor=white)
 
-This app allows anyone to read and contribute condition updates for hot
-springs in the area. Safety is a core focus — hot springs can become
-hazardous when water temperatures rise too high or conditions deteriorate.
+---
 
-Users are called **Soakers**. Each Soaker can add hot springs and tag
-them with community-sourced condition details such as `safe`, `natural`,
-`hike-in`, and more.
+## 🧖 What is this?
 
-## Tech Stack
+Hot springs have a real culture built around community care. Regulars maintain pools, monitor temps, and keep things safe for everyone. This app gives that community a voice — anyone can read or contribute condition updates tagged with things like `safe`, `natural`, `hike-in`, and more.
 
-### Back End
-- Java 21
-- Spring Boot 3.1.1
-- MySQL 8.0
-- Hibernate / JPA
-- Maven 3.9.16
-- Lombok 1.18.34
+Because nobody wants to drive two hours on a dirt road to find out the water is 115°F.
 
-### Front End
-- React (Vite)
-- Runs on `http://localhost:5173`
+---
 
-## How to Run Locally
+## ⚠️ Safety first
+
+Hot springs can become genuinely dangerous when temperatures spike or conditions deteriorate. This app treats safety as a core feature, not an afterthought. Always check the latest reports before you go in.
+
+---
+
+## 🛠️ Tech stack
+
+**Back end** — Java 21 · Spring Boot 3.1.1 · MySQL 8.0 · Hibernate/JPA · Maven · Lombok
+
+**Front end** — React (Vite) · runs on `http://localhost:5173`
+
+---
+
+## 🚀 Run it locally
 
 ### Prerequisites
 - Java 21
 - MySQL 8.0
 - Maven 3.9+
-- Node.js and npm
+- Node.js + npm
 
-### Database Setup
-
-Open MySQL and run:
-
+### 1. Set up the database
 ```sql
 CREATE DATABASE hot_springs;
 CREATE USER 'hot_springs'@'localhost' IDENTIFIED BY 'hot_springs';
 GRANT ALL PRIVILEGES ON hot_springs.* TO 'hot_springs'@'localhost';
 ```
 
-### Running the Back End
-
+### 2. Start the back end
 ```bash
-cd C:\Users\tamsl\Wk-18-Final-Project\hot-springs
+cd hot-springs
 mvn spring-boot:run
 ```
+Runs on `http://localhost:8080`
 
-App runs on `http://localhost:8080`
-
-### Running the Front End
-
+### 3. Start the front end
 ```bash
-cd C:\Users\tamsl\Wk-18-Final-Project\hot-springs-ui
+cd hot-springs-ui
 npm run dev
 ```
+Runs on `http://localhost:5173`
 
-App runs on `http://localhost:5173`
+---
 
-## API Endpoints
+## 📡 API endpoints
 
-### Soaker
+### Soakers
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/hot_spring/soaker` | Get all soakers |
+| GET | `/hot_spring/soaker/{id}` | Get soaker by ID |
+| POST | `/hot_spring/soaker` | Register a new soaker |
+| PUT | `/hot_spring/soaker/{id}` | Update a soaker |
+| DELETE | `/hot_spring/soaker/{id}` | Remove a soaker |
 
-| Method | Endpoint                       | Description          |
-|--------|--------------------------------|----------------------|
-| GET    | /hot_spring/soaker             | Get all soakers      |
-| GET    | /hot_spring/soaker/{id}        | Get soaker by ID     |
-| POST   | /hot_spring/soaker             | Create a soaker      |
-| PUT    | /hot_spring/soaker/{id}        | Update a soaker      |
-| DELETE | /hot_spring/soaker/{id}        | Delete a soaker      |
+### Hot Springs
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/hot_spring/soaker/{id}/hot_spring` | Get all springs for a soaker |
+| GET | `/hot_spring/soaker/{id}/hot_spring/{id}` | Get spring by ID |
+| POST | `/hot_spring/soaker/{id}/hot_spring` | Add a hot spring |
+| PUT | `/hot_spring/soaker/{id}/hot_spring/{id}` | Update a hot spring |
+| DELETE | `/hot_spring/soaker/{id}/hot_spring/{id}` | Remove a hot spring |
 
-### Hot Spring
+### Condition Tags
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/hot_spring/detail` | Get all condition tags |
 
-| Method | Endpoint                                         | Description            |
-|--------|--------------------------------------------------|------------------------|
-| GET    | /hot_spring/soaker/{id}/hot_spring               | Get all hot springs for a soaker |
-| GET    | /hot_spring/soaker/{id}/hot_spring/{id}          | Get hot spring by ID   |
-| POST   | /hot_spring/soaker/{id}/hot_spring               | Add a hot spring       |
-| PUT    | /hot_spring/soaker/{id}/hot_spring/{id}          | Update a hot spring    |
-| DELETE | /hot_spring/soaker/{id}/hot_spring/{id}          | Delete a hot spring    |
+---
 
-### Details
+## 📸 Screenshots
 
-| Method | Endpoint            | Description                        |
-|--------|---------------------|------------------------------------|
-| GET    | /hot_spring/detail  | Get all available condition detail tags |
-
-## Screenshots
-
-### Get All Soakers
+### Get all soakers
 ![Get All Soakers](screenshots/GET skinnyDipper.png)
 
-### Get Soaker by ID
+### Get soaker by ID
 ![Get Soaker by ID](screenshots/GET skinny_dipper 3.png)
 
-### Get Hot Spring
+### Get hot spring
 ![Get Hot Spring](screenshots/GET hot_spring 1.png)
 
-### Create Soaker
+### Create soaker
 ![Create Soaker](screenshots/POST skinny_dipper 4.png)
 
-### Create Hot Spring
+### Create hot spring
 ![Create Hot Spring](screenshots/POST hot_spring.png)
 
-### Delete Soaker
+### Delete soaker
 ![Delete Soaker](screenshots/DELETE skinny_dipper 4.png)
 
-## Known Issues
+---
 
-- The app may become unresponsive after periods of inactivity. If
-  requests hang, stop the app with `Ctrl+C` and restart with
-  `mvn spring-boot:run`.
+## 🐛 Known issues
 
-## Author
+The app may become unresponsive after sitting idle. If requests start hanging, `Ctrl+C` and `mvn spring-boot:run` again. Working on it.
 
-Tammy Thomas — Computer Science Program / College of Western Idaho, Back-End Development Certificate - Idaho State University / Promineotech
+---
+
+## 👩‍💻 Author
+
+**Tammy Thomas** — Back-End Development Certificate, Idaho State University / Promineotech · Computer Science, College of Western Idaho
