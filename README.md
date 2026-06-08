@@ -1,8 +1,9 @@
 > *"Soakable or sketchy right now?"*
 > *"Can my Subaru make it, or do I need a truck?"*
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=6B9FDD&width=500&lines=Community-powered+hot+spring+reports+%F0%9F%8C%A1%EF%B8%8F;Built+for+Soakers%2C+by+a+Soaker+%F0%9F%A7%96;Check+conditions+before+you+soak+%E2%9A%A0%EF%B8%8F;Java+%7C+Spring+Boot+%7C+React+%7C+MySQL;Idaho%27s+favorite+full-stack+app+%F0%9F%A5%BE)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=6B9FDD&width=500&lines=Community-powered+hot+spring+reports;Built+for+Soakers%2C+by+a+Soaker;Check+conditions+before+you+soak;Java+%7C+Spring+Boot+%7C+React+%7C+MySQL;Idaho%27s+favorite+full-stack+app)](https://git.io/typing-svg)
 
+# HotSprings
 
 A community-driven full-stack app for discovering and sharing real-time condition reports on hot springs across Idaho and beyond. Built for **Soakers** — the unsung heroes who show up with trash bags and thermometers so the rest of us can have a nice time.
 
@@ -13,21 +14,21 @@ A community-driven full-stack app for discovering and sharing real-time conditio
 
 ---
 
-## 🧖 What is this?
+## What is this?
 
-Hot springs have a real culture built around community care. Regulars maintain pools, monitor temps, and keep things safe for everyone. This app gives that community a voice — anyone can read or contribute condition updates tagged with things like `safe`, `natural`, `hike-in`, and more.
+Hot springs have a real culture built around community care. Regulars maintain pools, monitor conditions, and keep things safe for everyone. This app gives that community a voice — anyone can read or contribute condition updates tagged with things like `safe`, `natural`, `hike-in`, and more.
 
-Because nobody wants to drive two hours on a dirt road to find out the water is 115°F.
+Because nobody wants to drive two hours on a dirt road to find out the access is washed out.
 
 ---
 
-## ⚠️ Safety first
+## Safety first
 
 Hot springs can become genuinely dangerous when temperatures spike or conditions deteriorate. This app treats safety as a core feature, not an afterthought. Always check the latest reports before you go in.
 
 ---
 
-## 🛠️ Tech stack
+## Tech stack
 
 **Back end** — Java 21 · Spring Boot 3.1.1 · MySQL 8.0 · Hibernate/JPA · Maven · Lombok
 
@@ -35,7 +36,7 @@ Hot springs can become genuinely dangerous when temperatures spike or conditions
 
 ---
 
-## 🚀 Run it locally
+## Run it locally
 
 ### Prerequisites
 - Java 21
@@ -66,7 +67,7 @@ Runs on `http://localhost:5173`
 
 ---
 
-## 📡 API endpoints
+## API endpoints
 
 ### Soakers
 | Method | Endpoint | Description |
@@ -86,41 +87,41 @@ Runs on `http://localhost:5173`
 | PUT | `/hot_spring/soaker/{id}/hot_spring/{id}` | Update a hot spring |
 | DELETE | `/hot_spring/soaker/{id}/hot_spring/{id}` | Remove a hot spring |
 
-### Condition Tags
+### Condition tags
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | GET | `/hot_spring/detail` | Get all condition tags |
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 ### Get all soakers
-![Get All Soakers](screenshots/GET skinnyDipper.png)
+![Get all soakers](screenshots/GET-soaker.png)
 
 ### Get soaker by ID
-![Get Soaker by ID](screenshots/GET skinny_dipper 3.png)
+![Get soaker by ID](screenshots/GET-soaker-3.png)
 
 ### Get hot spring
-![Get Hot Spring](screenshots/GET hot_spring 1.png)
+![Get hot spring](screenshots/GET-hot_spring-1.png)
 
 ### Create soaker
-![Create Soaker](screenshots/POST skinny_dipper 4.png)
+![Create soaker](screenshots/POST-soaker-4.png)
 
 ### Create hot spring
-![Create Hot Spring](screenshots/POST hot_spring.png)
+![Create hot spring](screenshots/POST-hot_spring.png)
 
 ### Delete soaker
-![Delete Soaker]([screenshots/DELETE skinny_dipper 4.png](https://github.com/Memoria208/HotSprings-App/blob/main/screenshots/DELETE%20skinny_dipper%204.png))
+![Delete soaker](screenshots/DELETE-soaker-4.png)
 
 ---
 
-## 🐛 Known issues
+## Known issues
 
 The app may become unresponsive after sitting idle. If requests start hanging, `Ctrl+C` and `mvn spring-boot:run` again. Working on it.
 
 ---
 
-## 👩‍💻 Author
+## Author
 
-**memoria208.shortcut326@slmail.me** — Back-End Development Certificate, Idaho State University / Promineotech · Computer Science, College of Western Idaho
+**Tammy** — Back-End Development Certificate, Idaho State University / Promineotech · Computer Science, College of Western Idaho
