@@ -120,6 +120,8 @@ Runs on `http://localhost:5173`
 
 The app may become unresponsive after sitting idle. If requests start hanging, `Ctrl+C` and `mvn spring-boot:run` again. Working on it.
 
+Database overhaul in progress.
+
 ---
 
 ## Author
