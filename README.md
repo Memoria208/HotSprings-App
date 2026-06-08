@@ -111,7 +111,7 @@ Runs on `http://localhost:5173`
 ![Create Hot Spring](screenshots/POST hot_spring.png)
 
 ### Delete soaker
-![Delete Soaker](screenshots/DELETE skinny_dipper 4.png)
+![Delete Soaker]([screenshots/DELETE skinny_dipper 4.png](https://github.com/Memoria208/HotSprings-App/blob/main/screenshots/DELETE%20skinny_dipper%204.png))
 
 ---
 
