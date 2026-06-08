@@ -1,6 +1,7 @@
-# 🌡️ HotSprings
+<img width="1472" height="802" alt="image" src="https://github.com/user-attachments/assets/d9c1cbf0-dc15-4770-9aee-cf34ea2d6c25" />
 
-> *"What's the temperature like?"* — every Idahoan, always
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=6B9FDD&width=500&lines=Community-powered+hot+spring+reports+%F0%9F%8C%A1%EF%B8%8F;Built+for+Soakers%2C+by+a+Soaker+%F0%9F%A7%96;Check+conditions+before+you+go+%E2%9A%A0%EF%B8%8F;Java+%7C+Spring+Boot+%7C+React+%7C+MySQL;Idaho%27s+favorite+full-stack+app+%F0%9F%A5%BE)](https://git.io/typing-svg)
+
 
 A community-driven full-stack app for discovering and sharing real-time condition reports on hot springs across Idaho and beyond. Built for **Soakers** — the unsung heroes who show up with trash bags and thermometers so the rest of us can have a nice time.
 
@@ -121,4 +122,4 @@ The app may become unresponsive after sitting idle. If requests start hanging, `
 
 ## 👩‍💻 Author
 
-**Tammy Thomas** — Back-End Development Certificate, Idaho State University / Promineotech · Computer Science, College of Western Idaho
+**memoria208.shortcut326@slmail.me** — Back-End Development Certificate, Idaho State University / Promineotech · Computer Science, College of Western Idaho
